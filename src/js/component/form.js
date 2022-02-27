@@ -1,28 +1,53 @@
 import ReactDOM from "react-dom";
 import React, { useState } from "react";
 
-function Form(props) {
-	const [input, setInput] = useState("");
+function Form() {
+	const [newTask, setnewTask] = useState("");
+	const [tasks, setTasks] = useState([]);
 	const handleChange = (e) => {
 		setInput(e.target.value);
 	};
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		props.onSubmit({
-			id: Math.floor(Math.random() * 10000),
-			Text: input,
-		});
-		setInput("");
-	};
+
+	function addTask() {
+		setTasks([...tasks, newTask]);
+	}
+	function deleteTask(index) {
+		var delarray = [...tasks];
+		delarray.splice(index, 1);
+		setTasks(delarray);
+	}
+	const taskList = tasks.map((object, index) => {
+		return (
+			<div>
+				<h1>
+					{index + 1} {object}
+				</h1>
+				<button
+					onClick={() => {
+						deleteTask(index);
+					}}>
+					Delete
+				</button>
+			</div>
+		);
+	});
 	return (
-		<form className="todo-form" onSubmit={handleSubmit}>
-			<input
-				placeholder="add a task"
-				value={input}
-				className="todo-input"
-				onChange={handleChange}></input>
-			<button className="todo-button">Click to add a task</button>
-		</form>
+		<div className="task">
+			<h1> Simple Do To List</h1>
+			<div>
+				<input
+					type="text"
+					placeholder="add your task"
+					value={newTask}
+					onChange={(e) => {
+						setnewTask(e.target.value);
+					}}></input>
+				<button onClick={addTask} className="button">
+					Click me to add task
+				</button>
+			</div>
+			{taskList}
+		</div>
 	);
 }
 

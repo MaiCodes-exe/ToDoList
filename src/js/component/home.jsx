@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Todo from "./todo";
+// import Todo from "./todo";
 import Form from "./form";
-import List from "./list";
+// import List from "./list";
 
 //include images into your bundle
 
@@ -9,8 +9,9 @@ import List from "./list";
 const Home = () => {
 	return (
 		<div>
-			<Todo />
-			<List />
+			<Form />
+			{/* <Todo />
+			<List /> */}
 		</div>
 	);
 };

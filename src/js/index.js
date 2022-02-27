@@ -7,9 +7,7 @@ import "../styles/index.css";
 
 //import your own components
 import Home from "./component/home.jsx";
-import Todo from "./component/todo.js";
 import Form from "./component/form.js";
-import List from "./component/list.js";
 
 //render your react application
 ReactDOM.render(<Home />, document.querySelector("#app"));
