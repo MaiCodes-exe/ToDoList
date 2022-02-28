@@ -23,10 +23,11 @@ function Form() {
 					{index + 1} {object}
 				</h1>
 				<button
+					className="icon"
 					onClick={() => {
 						deleteTask(index);
 					}}>
-					Delete
+					<i class="bi bi-trash-fill"></i>
 				</button>
 			</div>
 		);
@@ -45,6 +46,13 @@ function Form() {
 				<button onClick={addTask} className="button">
 					Click me to add task
 				</button>
+				<div>
+					{/* {counter > 0 ? (
+						<ul>{toDoList}</ul>
+					) : (
+						<p>No tasks, add a task</p>
+					)} */}
+				</div>
 			</div>
 			{taskList}
 		</div>

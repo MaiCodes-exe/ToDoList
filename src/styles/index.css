@@ -16,6 +16,9 @@ body {
     font-size: medium;
     font-family: 'Fredoka', sans-serif;
 }
+.icon{
+    font-size: medium;
+}
 .task {
     background: #90AACB;
     width: 500px;
