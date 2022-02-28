@@ -19,7 +19,7 @@ function Form() {
 	const taskList = tasks.map((object, index) => {
 		return (
 			<div>
-				<h1>
+				<h1 className="number">
 					{index + 1} {object}
 				</h1>
 				<button
@@ -33,11 +33,11 @@ function Form() {
 	});
 	return (
 		<div className="task">
-			<h1> Simple Do To List</h1>
+			<h1 className="title"> Simple Do To List</h1>
 			<div>
 				<input
 					type="text"
-					placeholder="add your task"
+					placeholder="Add your task"
 					value={newTask}
 					onChange={(e) => {
 						setnewTask(e.target.value);
